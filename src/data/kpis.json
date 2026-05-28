@@ -1,246 +1,357 @@
 {
-  "generatedAt": "2026-05-28T11:52:27.965Z",
+  "generatedAt": "2026-05-28T13:28:30.540Z",
   "summary": {
-    "totalLogs": 60,
-    "totalDecided": 55,
-    "totalSent": 46,
-    "totalPending": 5,
-    "totalActiveCommunicated": 30
+    "totalLogs": 20339,
+    "totalDecided": 482,
+    "totalSent": 469,
+    "totalPending": 19857,
+    "totalActiveCommunicated": 6925
   },
   "csuite": {
-    "approvalRate": 81.82,
-    "throughputPerWeek": 10.05,
+    "approvalRate": 57.47,
+    "throughputPerWeek": 199.87,
     "weeklyTrend": [
       {
-        "week": "2026-03-29",
-        "count": 4
-      },
-      {
-        "week": "2026-04-05",
-        "count": 7
-      },
-      {
-        "week": "2026-04-12",
-        "count": 10
-      },
-      {
-        "week": "2026-04-19",
-        "count": 13
-      },
-      {
-        "week": "2026-04-26",
-        "count": 11
-      },
-      {
         "week": "2026-05-03",
-        "count": 1
+        "count": 119
+      },
+      {
+        "week": "2026-05-10",
+        "count": 295
+      },
+      {
+        "week": "2026-05-17",
+        "count": 55
       }
     ],
-    "coverageRate": 26.67,
-    "replyRate": 40,
-    "emailsSent": 30,
-    "emailReplies": 12
+    "coverageRate": 6.06,
+    "replyRate": 37.25,
+    "emailsSent": 1455,
+    "emailReplies": 542
   },
   "salesLead": {
     "overrideRateByRep": [
       {
-        "rep": "Mike Thompson",
-        "overrideRate": 50,
-        "total": 12
+        "rep": "Marvin Hug",
+        "overrideRate": 98.27,
+        "total": 173
       },
       {
-        "rep": "Lisa Park",
-        "overrideRate": 50,
-        "total": 12
+        "rep": "Alexandra Kuschner",
+        "overrideRate": 98,
+        "total": 100
       },
       {
-        "rep": "Sarah Connor",
-        "overrideRate": 33.33,
-        "total": 15
+        "rep": "Irfan Guener",
+        "overrideRate": 75.32,
+        "total": 77
       },
       {
-        "rep": "James Rodriguez",
-        "overrideRate": 33.33,
-        "total": 15
+        "rep": "Lennart Uhrig",
+        "overrideRate": 71.43,
+        "total": 7
       },
       {
-        "rep": "context_here",
-        "overrideRate": 0,
-        "total": 1
+        "rep": "Raban Kolster",
+        "overrideRate": 54.93,
+        "total": 71
+      },
+      {
+        "rep": "Chris Schemel",
+        "overrideRate": 47.62,
+        "total": 42
+      },
+      {
+        "rep": "Gloria Schmalisch",
+        "overrideRate": 45.45,
+        "total": 11
       }
     ],
     "latencyP90ByRep": [
       {
-        "rep": "Sarah Connor",
-        "p90Hours": 2,
-        "p50Hours": 0.5
+        "rep": "Raban Kolster",
+        "p90Hours": 251.38,
+        "p50Hours": 76.06
       },
       {
-        "rep": "Mike Thompson",
-        "p90Hours": 2,
-        "p50Hours": 0.75
+        "rep": "Marvin Hug",
+        "p90Hours": 152.15,
+        "p50Hours": 32.97
       },
       {
-        "rep": "James Rodriguez",
-        "p90Hours": 1.5,
-        "p50Hours": 0.67
+        "rep": "Irfan Guener",
+        "p90Hours": 122.05,
+        "p50Hours": 71.72
       },
       {
-        "rep": "Lisa Park",
-        "p90Hours": 1.5,
-        "p50Hours": 0.5
+        "rep": "Chris Schemel",
+        "p90Hours": 120.84,
+        "p50Hours": 19.09
       },
       {
-        "rep": "context_here",
-        "p90Hours": 0,
-        "p50Hours": 0
+        "rep": "Gloria Schmalisch",
+        "p90Hours": 107.18,
+        "p50Hours": 73.64
+      },
+      {
+        "rep": "Alexandra Kuschner",
+        "p90Hours": 105.81,
+        "p50Hours": 0.4
+      },
+      {
+        "rep": "Lennart Uhrig",
+        "p90Hours": 0.94,
+        "p50Hours": 0.07
       }
     ],
     "rejectionByStage": [
       {
+        "stage": "mof_no_show",
+        "rejectionRate": 100,
+        "total": 1,
+        "rejected": 1
+      },
+      {
         "stage": "sdr_pre_pitch",
-        "rejectionRate": 23.68,
-        "total": 38,
-        "rejected": 9
-      },
-      {
-        "stage": "pitch_booked",
-        "rejectionRate": 0,
-        "total": 1,
-        "rejected": 0
-      },
-      {
-        "stage": "post_first_pitch_mof",
-        "rejectionRate": 0,
-        "total": 8,
-        "rejected": 0
-      },
-      {
-        "stage": "Call",
-        "rejectionRate": 0,
-        "total": 1,
-        "rejected": 0
-      },
-      {
-        "stage": "mof_reengagement",
-        "rejectionRate": 0,
-        "total": 3,
-        "rejected": 0
-      },
-      {
-        "stage": "no_show_tof",
-        "rejectionRate": 0,
-        "total": 2,
-        "rejected": 0
-      },
-      {
-        "stage": "mof_post_pitch",
-        "rejectionRate": 0,
-        "total": 1,
-        "rejected": 0
+        "rejectionRate": 54.88,
+        "total": 164,
+        "rejected": 90
       },
       {
         "stage": "lead_lost",
-        "rejectionRate": 0,
-        "total": 1,
-        "rejected": 0
+        "rejectionRate": 50,
+        "total": 2,
+        "rejected": 1
+      },
+      {
+        "stage": "send_material",
+        "rejectionRate": 43.65,
+        "total": 181,
+        "rejected": 79
+      },
+      {
+        "stage": "mof_post_pitch",
+        "rejectionRate": 40,
+        "total": 5,
+        "rejected": 2
+      },
+      {
+        "stage": "no_show_tof",
+        "rejectionRate": 31.58,
+        "total": 19,
+        "rejected": 6
+      },
+      {
+        "stage": "pitch_booked",
+        "rejectionRate": 25,
+        "total": 80,
+        "rejected": 20
+      },
+      {
+        "stage": "post_first_pitch_mof",
+        "rejectionRate": 22.73,
+        "total": 22,
+        "rejected": 5
+      },
+      {
+        "stage": "mof_reengagement",
+        "rejectionRate": 12.5,
+        "total": 8,
+        "rejected": 1
       }
     ],
-    "channelOverrideRate": 7.69,
-    "channelOverrides": 1,
-    "totalApprovedEdited": 13,
+    "channelOverrideRate": 2.62,
+    "channelOverrides": 5,
+    "totalApprovedEdited": 191,
     "slippageByRep": [
       {
-        "rep": "Mike Thompson",
-        "avgSlippageDays": 0.4
+        "rep": "Isabella K",
+        "avgSlippageDays": -0.53
       },
       {
-        "rep": "Lisa Park",
-        "avgSlippageDays": 0.4
+        "rep": "Alex Quilatang",
+        "avgSlippageDays": -1.54
       },
       {
-        "rep": "James Rodriguez",
-        "avgSlippageDays": 0.37
+        "rep": "Lianh Hahlen",
+        "avgSlippageDays": -1.74
       },
       {
-        "rep": "Sarah Connor",
-        "avgSlippageDays": 0.36
+        "rep": "Luca Micke",
+        "avgSlippageDays": -1.78
+      },
+      {
+        "rep": "Isabella Kuschner",
+        "avgSlippageDays": -2.03
+      },
+      {
+        "rep": "Jenefer Rosarito",
+        "avgSlippageDays": -2.09
+      },
+      {
+        "rep": "Christoph Schemel",
+        "avgSlippageDays": -2.19
+      },
+      {
+        "rep": "Marian Dionisio",
+        "avgSlippageDays": -2.32
+      },
+      {
+        "rep": "Akhib Nayaz",
+        "avgSlippageDays": -2.34
+      },
+      {
+        "rep": "Caira Panoso",
+        "avgSlippageDays": -2.39
+      },
+      {
+        "rep": "Alvin Pomarin",
+        "avgSlippageDays": -2.48
+      },
+      {
+        "rep": "Alex Jr Quilantang",
+        "avgSlippageDays": -2.51
       }
     ]
   },
   "operator": {
     "editRateByCategory": [
       {
-        "category": "mof_post_pitch",
+        "category": "lead_lost",
         "editRate": 100,
         "total": 2
       },
       {
-        "category": "mof_reengagement",
+        "category": "send_material",
+        "editRate": 98,
+        "total": 200
+      },
+      {
+        "category": "mof_post_pitch",
         "editRate": 80,
         "total": 5
       },
       {
-        "category": "post_first_pitch_mof",
-        "editRate": 66.67,
-        "total": 12
+        "category": "sdr_pre_pitch",
+        "editRate": 76.67,
+        "total": 120
       },
       {
-        "category": "sdr_pre_pitch",
-        "editRate": 34.29,
-        "total": 35
+        "category": "mof_reengagement",
+        "editRate": 72.73,
+        "total": 11
       },
       {
         "category": "pitch_booked",
-        "editRate": 0,
-        "total": 1
+        "editRate": 65.17,
+        "total": 89
+      },
+      {
+        "category": "post_first_pitch_mof",
+        "editRate": 58.33,
+        "total": 24
       },
       {
         "category": "no_show_tof",
-        "editRate": 0,
-        "total": 2
-      },
-      {
-        "category": "lead_lost",
-        "editRate": 0,
-        "total": 1
+        "editRate": 47.06,
+        "total": 17
       }
     ],
-    "backlogCount": 5,
-    "backlogAvgAgeHours": 566.9,
-    "avgFollowupRejected": 1.56,
-    "avgFollowupApproved": 1.56,
+    "backlogCount": 19857,
+    "backlogAvgAgeHours": 457.92,
+    "avgFollowupRejected": 0.98,
+    "avgFollowupApproved": 1.17,
     "followupDepthDistribution": [
       {
+        "followup": "F0",
+        "count": 48
+      },
+      {
         "followup": "F1",
-        "count": 5
+        "count": 143
       },
       {
         "followup": "F2",
-        "count": 3
+        "count": 2
       },
       {
         "followup": "F3",
+        "count": 6
+      },
+      {
+        "followup": "F4",
+        "count": 2
+      },
+      {
+        "followup": "F5",
+        "count": 1
+      },
+      {
+        "followup": "F7",
+        "count": 2
+      },
+      {
+        "followup": "F8",
         "count": 1
       }
     ],
-    "flagImpact": [],
-    "baselineRejRate": 16.36,
+    "flagImpact": [
+      {
+        "flag": "EMAIL_BOUNCED",
+        "flaggedRejectionRate": 33.33,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "OOO_REPLY",
+        "flaggedRejectionRate": 0,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "MULTIPLE_DEALS",
+        "flaggedRejectionRate": 33.33,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "LAST_EMAIL_VIA_SEQUENCE",
+        "flaggedRejectionRate": 28.26,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 46
+      }
+    ],
+    "baselineRejRate": 42.53,
     "triggerDistribution": [
       {
-        "trigger": "bridge_evaluation",
-        "count": 51,
-        "pct": 85
+        "trigger": "call_logged",
+        "count": 11367,
+        "pct": 55.89
+      },
+      {
+        "trigger": "linkedin_message",
+        "count": 3241,
+        "pct": 15.93
+      },
+      {
+        "trigger": "message_sent",
+        "count": 2896,
+        "pct": 14.24
       },
       {
         "trigger": "message_received",
-        "count": 8,
-        "pct": 13.33
+        "count": 1893,
+        "pct": 9.31
       },
       {
-        "trigger": "call_logged",
-        "count": 1,
-        "pct": 1.67
+        "trigger": "other",
+        "count": 827,
+        "pct": 4.07
+      },
+      {
+        "trigger": "unknown",
+        "count": 115,
+        "pct": 0.57
       }
     ]
   }

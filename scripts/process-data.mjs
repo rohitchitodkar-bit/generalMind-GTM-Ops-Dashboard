@@ -44,6 +44,21 @@ const communicated = readCsv("hs_communicated.csv");
 
 const communicatedIds = new Set(communicated.map((r) => String(r.contact_id)));
 
+// ── Owner name normalisation ───────────────────────────────────────────────
+// Some rows contain CRM placeholder strings instead of real rep names.
+// Filter these out of per-rep KPIs so they don't pollute charts.
+const GARBAGE_OWNER = /^(Contact Owner|Not set$|Not applicable$|Human Review$|\d+$)/i;
+
+const OWNER_ALIASES = {
+  "Irfan Güner":        "Irfan Guener",
+  "Alexandra Kushner":  "Alexandra Kuschner",
+};
+
+function cleanOwner(raw) {
+  if (!raw || GARBAGE_OWNER.test(raw.trim())) return null;
+  return OWNER_ALIASES[raw.trim()] ?? raw.trim();
+}
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 const decided = logs.filter((r) => r.outcome && r.outcome.trim() !== "");
 const approved = decided.filter((r) =>
@@ -82,7 +97,7 @@ if (sentDates.length > 0) {
 }
 
 // ── KPI 3: Contact Coverage Rate (last 30 days) ─────────────────────────────
-const today = new Date("2026-05-28");
+const today = new Date();
 const cutoff30 = new Date(today);
 cutoff30.setDate(today.getDate() - 30);
 
@@ -110,7 +125,8 @@ const replyRate = emailsSent > 0 ? round2((emailReplies / emailsSent) * 100) : 0
 // ── KPI 5: Human Override Rate by Rep ───────────────────────────────────────
 const repMap = {};
 decided.forEach((r) => {
-  const rep = r.owner_name || "Unknown";
+  const rep = cleanOwner(r.owner_name);
+  if (!rep) return;
   if (!repMap[rep]) repMap[rep] = { total: 0, overrides: 0 };
   repMap[rep].total += 1;
   if (r.outcome === "approved_edited" || r.outcome === "rejected") {
@@ -123,25 +139,30 @@ const overrideRateByRep = Object.entries(repMap)
     overrideRate: round2((d.overrides / d.total) * 100),
     total: d.total,
   }))
-  .sort((a, b) => b.overrideRate - a.overrideRate);
+  .filter((r) => r.total >= 3)
+  .sort((a, b) => b.overrideRate - a.overrideRate)
+  .slice(0, 12);
 
 // ── KPI 6: Review Latency P90 by Rep (hours) ────────────────────────────────
 const latencyByRep = {};
 decided.forEach((r) => {
   if (!r.drafted_at || !r.approved_at) return;
-  const rep = r.owner_name || "Unknown";
+  const rep = cleanOwner(r.owner_name);
+  if (!rep) return;
   const latencyHours =
     (new Date(r.approved_at) - new Date(r.drafted_at)) / 3600000;
   if (!latencyByRep[rep]) latencyByRep[rep] = [];
   if (latencyHours >= 0) latencyByRep[rep].push(latencyHours);
 });
 const latencyP90ByRep = Object.entries(latencyByRep)
+  .filter(([, vals]) => vals.length >= 3)
   .map(([rep, vals]) => ({
     rep,
     p90Hours: round2(percentile(vals, 90)),
     p50Hours: round2(percentile(vals, 50)),
   }))
-  .sort((a, b) => b.p90Hours - a.p90Hours);
+  .sort((a, b) => b.p90Hours - a.p90Hours)
+  .slice(0, 12);
 
 // ── KPI 7: Rejection Rate by Funnel Stage ──────────────────────────────────
 const stageMap = {};
@@ -173,19 +194,21 @@ const channelOverrideRate =
 const slippageByRepMap = {};
 logs.forEach((r) => {
   if (!r.recontact_date || !r.drafted_at) return;
-  const rep = r.owner_name || "Unknown";
+  const rep = cleanOwner(r.owner_name);
+  if (!rep) return;
   const slipDays =
     (new Date(r.drafted_at) - new Date(r.recontact_date)) / 86400000;
   if (!slippageByRepMap[rep]) slippageByRepMap[rep] = [];
   if (!isNaN(slipDays)) slippageByRepMap[rep].push(slipDays);
 });
 const slippageByRep = Object.entries(slippageByRepMap)
-  .filter(([, vals]) => vals.length > 0)
+  .filter(([, vals]) => vals.length >= 5)
   .map(([rep, vals]) => ({
     rep,
     avgSlippageDays: round2(vals.reduce((a, b) => a + b, 0) / vals.length),
   }))
-  .sort((a, b) => b.avgSlippageDays - a.avgSlippageDays);
+  .sort((a, b) => b.avgSlippageDays - a.avgSlippageDays)
+  .slice(0, 12);
 
 // ── KPI 10: Draft Edit Rate by Category ─────────────────────────────────────
 const editCatMap = {};
