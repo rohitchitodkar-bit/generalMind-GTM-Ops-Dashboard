@@ -97,6 +97,7 @@ export default function AIQualitySection({ data }: Props) {
               <YAxis tick={{ fill: "#6b7280", fontSize: 11 }} unit="%" domain={[0, 100]} />
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number) => [`${v}%`, "Edit Rate"]}
               />
               <Bar dataKey="editRate" radius={[4, 4, 0, 0]}>
@@ -125,6 +126,7 @@ export default function AIQualitySection({ data }: Props) {
               <YAxis tick={{ fill: "#6b7280", fontSize: 11 }} unit="%" domain={[0, 100]} />
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number) => [`${v}%`, "Rejection Rate"]}
               />
               <Bar dataKey="rejectionRate" radius={[4, 4, 0, 0]}>
@@ -164,6 +166,7 @@ export default function AIQualitySection({ data }: Props) {
               </Pie>
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number) => [v.toLocaleString(), "decisions"]}
               />
               <Legend
@@ -191,6 +194,7 @@ export default function AIQualitySection({ data }: Props) {
               <YAxis tick={{ fill: "#6b7280", fontSize: 11 }} unit="%" domain={[0, 100]} />
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number) => [`${v}%`, "Rejection Rate"]}
               />
               <Bar dataKey="rejectionRate" radius={[4, 4, 0, 0]}>

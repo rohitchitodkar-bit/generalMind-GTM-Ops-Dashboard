@@ -166,6 +166,7 @@ export default function RepSection({ data }: Props) {
               <YAxis type="category" dataKey="rep" tick={{ fill: "#d1d5db", fontSize: 12 }} width={70} />
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number, name: string) => [`${v}h (${(v / 24).toFixed(1)}d)`, name]}
               />
               <Bar dataKey="p90Hours" name="P90" radius={[0, 4, 4, 0]}>
@@ -200,6 +201,7 @@ export default function RepSection({ data }: Props) {
               <ReferenceLine x={0} stroke="#4b5563" />
               <Tooltip
                 contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                itemStyle={{ color: "#ffffff" }}
                 formatter={(v: number) => [`${v}d avg`, "Slippage"]}
               />
               <Bar dataKey="avgSlippageDays" name="Avg Slippage" radius={[0, 4, 4, 0]}>

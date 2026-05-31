@@ -155,6 +155,7 @@ export default function PipelineSection({ data }: Props) {
                 <YAxis type="category" dataKey="label" tick={{ fill: "#d1d5db", fontSize: 10 }} width={120} />
                 <Tooltip
                   contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
+                  itemStyle={{ color: "#ffffff" }}
                   formatter={(v: number) => [`${v}%`, "Approval Rate"]}
                 />
                 <Bar dataKey="approvalRate" radius={[0, 4, 4, 0]}>
