@@ -172,7 +172,7 @@ export default function ExecHealthSection({ data, summary, anomalyWeek }: Props)
             <YAxis yAxisId="left" tick={{ fill: "#6b7280", fontSize: 11 }} />
             <YAxis yAxisId="right" orientation="right" domain={[0, 100]} unit="%" tick={{ fill: "#6b7280", fontSize: 11 }} />
             <Tooltip
-              contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8 }}
+              contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
               labelStyle={{ color: "#d1d5db" }}
             />
             <Legend

@@ -96,7 +96,7 @@ export default function DashboardPage() {
             {summary.totalSent} messages sent ·{" "}
             {summary.totalActiveCommunicated.toLocaleString()} active contacts ·{" "}
             {summary.totalDecided} reviewed ·{" "}
-            KPIs: 36 active · 3 dead (KPI 36/37/40) · {anomalyWeek} anomaly excluded where noted
+            Review throughput is the primary constraint — fix the queue and output multiplies immediately · {anomalyWeek} bulk anomaly excluded from operational metrics
           </p>
         </div>
 

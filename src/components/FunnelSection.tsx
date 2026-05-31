@@ -144,7 +144,7 @@ export default function FunnelSection({ data, anomalyWeek }: Props) {
               <XAxis type="number" tick={{ fill: "#6b7280", fontSize: 11 }} />
               <YAxis type="category" dataKey="name" tick={{ fill: "#d1d5db", fontSize: 11 }} width={110} />
               <Tooltip
-                contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8 }}
+                contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
                 formatter={(v: number) => [v, "count"]}
               />
               <Bar dataKey="value" radius={[0, 4, 4, 0]}>
@@ -180,7 +180,7 @@ export default function FunnelSection({ data, anomalyWeek }: Props) {
                 ))}
               </Pie>
               <Tooltip
-                contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8 }}
+                contentStyle={{ backgroundColor: "#111827", border: "1px solid #374151", borderRadius: 8, color: "#ffffff" }}
                 formatter={(v: number) => [v.toLocaleString(), "decisions"]}
               />
               <Legend
