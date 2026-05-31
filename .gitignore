@@ -23,6 +23,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# presentation materials — keep off public repo
+demo-script.html
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
