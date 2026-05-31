@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-05-31T09:32:22.720Z",
+  "generatedAt": "2026-05-31T15:36:47.500Z",
   "anomalyWeek": "W19",
   "summary": {
     "totalLogs": 20339,
     "totalDecided": 482,
     "totalSent": 469,
-    "totalActiveCommunicated": 6925
+    "totalActiveCommunicated": 6925,
+    "anomalyDecisions": 14504
   },
   "exec": {
     "coverageRate": 6.06,
@@ -594,6 +595,7 @@
       }
     ],
     "noReasonCount": 62,
+    "totalRejected": 205,
     "timingRejections": 82,
     "timingRejectionRate": 40,
     "flagImpact": [

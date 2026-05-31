@@ -41,6 +41,10 @@ function conv(a: number, b: number) {
 }
 
 export default function FunnelSection({ data, anomalyWeek }: Props) {
+  const humanPct    = data.channelDistribution.find(c => c.channel === "Human")?.pct ?? 0;
+  const callPct     = data.channelDistribution.find(c => c.channel === "Call")?.pct ?? 0;
+  const noReviewPct = Math.round((humanPct + callPct) * 10) / 10;
+
   const stages = [
     { label: "AI Decisions",     value: data.decisions,      note: "Every AI evaluation" },
     { label: "Drafts Created",   value: data.draftsCreated,  note: "message_draft populated" },
@@ -196,7 +200,7 @@ export default function FunnelSection({ data, anomalyWeek }: Props) {
             </PieChart>
           </ResponsiveContainer>
           <p className="text-xs text-gray-600 mt-2">
-            Human (36%) + Call (22%) = 58% of decisions never produce a reviewable draft
+            Human ({humanPct}%) + Call ({callPct}%) = {noReviewPct}% of decisions never produce a reviewable draft
           </p>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function DashboardPage() {
             <code className="font-mono">meeting_booked</code>, and{" "}
             <code className="font-mono">responded_at</code> are not yet populated — commercial attribution metrics
             (reply rate, meeting conversion) are unavailable. Reply rate is proxied via HubSpot activity log.
-            {" "}<strong>{anomalyWeek} anomaly batch</strong> ({(14504).toLocaleString()} bulk decisions) is
+            {" "}<strong>{anomalyWeek} anomaly batch</strong> ({summary.anomalyDecisions.toLocaleString()} bulk decisions) is
             annotated throughout — affected metrics exclude it where noted.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function DashboardPage() {
           <p className="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">Dashboard Narrative</p>
           <p className="text-sm text-gray-300">
             The AI evaluates <strong className="text-white">{summary.totalLogs.toLocaleString()} contacts</strong>,
-            produces <strong className="text-white">8,886 drafts</strong>, but only{" "}
+            produces <strong className="text-white">{funnel.draftsCreated.toLocaleString()} drafts</strong>, but only{" "}
             <strong className="text-white">{funnel.draftToReviewRateExAnomaly}%</strong> get reviewed (ex-{anomalyWeek}).
             Of those, <strong className="text-white">{(100 - exec.rejectedRate).toFixed(1)}%</strong> are approved and{" "}
             <strong className="text-white">{funnel.reviewToSendRate}%</strong> of approvals are sent.

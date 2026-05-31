@@ -42,8 +42,11 @@ const STAGE_LABELS: Record<string, string> = {
 export default function PipelineSection({ data }: Props) {
   const slippageEarly = data.slippageP50Days < 0;
 
-  // Throughput capacity calculation
   const weeksToClear = data.overdueRecontacts > 0 ? Math.round(data.overdueRecontacts / 175) : 0;
+
+  const sdrPct  = data.stageDistribution.find(s => s.stage === "sdr_pre_pitch")?.pct ?? 0;
+  const lostPct = data.stageDistribution.find(s => s.stage === "lead_lost")?.pct ?? 0;
+  const coldPct = Math.round((sdrPct + lostPct) * 10) / 10;
 
   return (
     <section className="mb-12">
@@ -134,7 +137,7 @@ export default function PipelineSection({ data }: Props) {
               ))}
             </div>
             <p className="text-xs text-gray-600 mt-3">
-              sdr_pre_pitch + lead_lost = 76.7% of all AI decisions (coldest stages)
+              sdr_pre_pitch + lead_lost = {coldPct}% of all AI decisions (coldest stages)
             </p>
           </div>
 

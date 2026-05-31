@@ -44,6 +44,7 @@ interface Props {
 }
 
 export default function ExecHealthSection({ data, summary, anomalyWeek }: Props) {
+  const anomalyDecisions = data.weeklyTrend.find(w => w.anomaly)?.decisions ?? 0;
   const p90Days = (data.draftToSendP90h / 24).toFixed(1);
   const p50Days = (data.draftToSendP50h / 24).toFixed(1);
 
@@ -194,7 +195,7 @@ export default function ExecHealthSection({ data, summary, anomalyWeek }: Props)
           </ComposedChart>
         </ResponsiveContainer>
         <p className="text-xs text-gray-700 mt-2">
-          W17–W18 = pre-operational ramp · W19 = anomalous bulk batch (14,504 decisions) · W21 = partial week
+          W17–W18 = pre-operational ramp · {anomalyWeek} = anomalous bulk batch ({anomalyDecisions.toLocaleString()} decisions) · W21 = partial week
         </p>
       </div>
     </section>

@@ -21,6 +21,7 @@ interface Props {
     triggerDistribution:    TriggerRow[];
     rejectionReasons:       ReasonRow[];
     noReasonCount:          number;
+    totalRejected:          number;
     timingRejections:       number;
     timingRejectionRate:    number;
     flagImpact:             FlagRow[];
@@ -50,6 +51,10 @@ function isTimingReason(reason: string) {
 }
 
 export default function AIQualitySection({ data }: Props) {
+  const sendMaterialRate = data.editRateByCategory.find(r => r.category === "send_material")?.editRate;
+  const sdrPrePitchRate  = data.editRateByCategory.find(r => r.category === "sdr_pre_pitch")?.editRate;
+  const callLoggedPct    = data.triggerDistribution.find(t => t.trigger === "call_logged")?.pct;
+
   return (
     <section className="mb-12">
       <SectionHeader
@@ -70,7 +75,7 @@ export default function AIQualitySection({ data }: Props) {
         <MetricCard
           title="Timing-Driven Rejections"
           value={`${data.timingRejectionRate}%`}
-          subtitle={`${data.timingRejections} of ${data.rejectionReasons.reduce((s, r) => s + r.count, 0) + data.noReasonCount} rejections`}
+          subtitle={`${data.timingRejections} of ${data.totalRejected} rejections`}
           trend="neutral"
           note={`"Already handled / too late" — workflow fix, not AI fix`}
         />
@@ -108,7 +113,7 @@ export default function AIQualitySection({ data }: Props) {
             </BarChart>
           </ResponsiveContainer>
           <p className="text-xs text-gray-600 mt-1">
-            send_material ≈98% + sdr_pre_pitch ≈77% = highest correction burden
+            {sendMaterialRate != null ? `send_material ≈${sendMaterialRate}%` : "send_material"} + {sdrPrePitchRate != null ? `sdr_pre_pitch ≈${sdrPrePitchRate}%` : "sdr_pre_pitch"} = highest correction burden
           </p>
         </div>
 
@@ -146,7 +151,7 @@ export default function AIQualitySection({ data }: Props) {
           <p className="text-sm font-medium text-gray-400 mb-1">Trigger Type Distribution</p>
           <p className="text-xs text-gray-600 mb-1">What drives AI evaluations? · 100% filled, HIGH confidence</p>
           <p className="text-xs text-amber-400/70 mb-3">
-            call_logged dominates (55.9%) — AI is primarily a post-call follow-up engine
+            call_logged dominates ({callLoggedPct ?? "—"}%) — AI is primarily a post-call follow-up engine
           </p>
           <ResponsiveContainer width="100%" height={170}>
             <PieChart>
@@ -267,7 +272,7 @@ export default function AIQualitySection({ data }: Props) {
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-red-300">Other / potential quality issues</span>
                   <span className="text-sm font-bold text-red-400">
-                    {data.rejectionReasons.reduce((s, r) => s + r.count, 0) - data.timingRejections}×
+                    {data.totalRejected - data.noReasonCount - data.timingRejections}×
                   </span>
                 </div>
               </div>
@@ -275,7 +280,7 @@ export default function AIQualitySection({ data }: Props) {
             <div className="bg-amber-950/20 border border-amber-800/20 rounded-lg p-3">
               <p className="text-xs text-amber-300 font-medium mb-1">Action Item</p>
               <p className="text-xs text-gray-400">
-                The 42.5% rejection rate is primarily a review latency problem, not AI quality.
+                The {data.baselineRejRate}% rejection rate is primarily a review latency problem, not AI quality.
                 "marv was too late" + "already done manually" represent the dominant rejection pattern.
                 Fix: reduce P90 review latency from 5 days to &lt;24h.
               </p>

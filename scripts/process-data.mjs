@@ -536,6 +536,7 @@ const kpis = {
     totalDecided:            decided.length,
     totalSent:               sent.length,
     totalActiveCommunicated: communicatedIds.size,
+    anomalyDecisions:        decisionsByWeek[ANOMALY_WEEK] || 0,
   },
   exec: {
     coverageRate,
@@ -591,6 +592,7 @@ const kpis = {
     triggerDistribution,
     rejectionReasons,
     noReasonCount,
+    totalRejected:      rejected.length,
     timingRejections,
     timingRejectionRate: rejected.length > 0
       ? round2((timingRejections / rejected.length) * 100) : 0,
