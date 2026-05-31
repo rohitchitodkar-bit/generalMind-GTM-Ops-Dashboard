@@ -1,127 +1,434 @@
 {
-  "generatedAt": "2026-05-28T13:28:30.540Z",
+  "generatedAt": "2026-05-31T09:32:22.720Z",
+  "anomalyWeek": "W19",
   "summary": {
     "totalLogs": 20339,
     "totalDecided": 482,
     "totalSent": 469,
-    "totalPending": 19857,
     "totalActiveCommunicated": 6925
   },
-  "csuite": {
-    "approvalRate": 57.47,
-    "throughputPerWeek": 199.87,
+  "exec": {
+    "coverageRate": 6.06,
+    "untouchedCount": 6505,
+    "untouchedRate": 93.94,
+    "throughputRepresentative": 175,
     "weeklyTrend": [
       {
-        "week": "2026-05-03",
-        "count": 119
+        "week": "W17",
+        "decisions": 37,
+        "sent": 0,
+        "approvalRate": 77.78,
+        "anomaly": false,
+        "preLive": false
       },
       {
-        "week": "2026-05-10",
-        "count": 295
+        "week": "W18",
+        "decisions": 1258,
+        "sent": 0,
+        "approvalRate": 26.09,
+        "anomaly": false,
+        "preLive": false
       },
       {
-        "week": "2026-05-17",
-        "count": 55
+        "week": "W19",
+        "decisions": 14504,
+        "sent": 119,
+        "approvalRate": 77.64,
+        "anomaly": true,
+        "preLive": false
+      },
+      {
+        "week": "W20",
+        "decisions": 3502,
+        "sent": 295,
+        "approvalRate": 44.44,
+        "anomaly": false,
+        "preLive": false
+      },
+      {
+        "week": "W21",
+        "decisions": 1038,
+        "sent": 55,
+        "approvalRate": 84.48,
+        "anomaly": false,
+        "preLive": false
       }
     ],
-    "coverageRate": 6.06,
+    "asIsRate": 17.84,
+    "editedRate": 39.63,
+    "rejectedRate": 42.53,
+    "draftToSendP90h": 120.84,
+    "draftToSendP50h": 101.01,
+    "pendingOver24h": 3381,
+    "aiAssistRate": 73.12,
+    "aiAssistNumerator": 487,
+    "aiAssistDenominator": 666,
     "replyRate": 37.25,
     "emailsSent": 1455,
     "emailReplies": 542
   },
-  "salesLead": {
-    "overrideRateByRep": [
+  "funnel": {
+    "decisions": 20339,
+    "draftsCreated": 8886,
+    "draftsReviewed": 482,
+    "approvedAsIs": 86,
+    "approvedEdited": 191,
+    "rejected": 205,
+    "sent": 469,
+    "ghostSends": 263,
+    "sentWithApproval": 206,
+    "decisionToSendRate": 2.31,
+    "draftToReviewRate": 5.42,
+    "draftToReviewRateExAnomaly": 13.37,
+    "reviewToSendRate": 74.37,
+    "channelDistribution": [
+      {
+        "channel": "Human",
+        "count": 7321,
+        "pct": 35.99
+      },
+      {
+        "channel": "Email",
+        "count": 4944,
+        "pct": 24.31
+      },
+      {
+        "channel": "Call",
+        "count": 4388,
+        "pct": 21.57
+      },
+      {
+        "channel": "LinkedIN",
+        "count": 3669,
+        "pct": 18.04
+      },
+      {
+        "channel": "SMS",
+        "count": 17,
+        "pct": 0.08
+      }
+    ]
+  },
+  "reps": {
+    "breakdown": [
       {
         "rep": "Marvin Hug",
+        "reviewed": 173,
+        "asIsRate": 1.73,
+        "editRate": 37.57,
+        "rejectionRate": 60.69,
         "overrideRate": 98.27,
-        "total": 173
+        "p90Hours": 152.15,
+        "p50Hours": 32.97,
+        "pending": 679,
+        "pendingOver24h": 679,
+        "activeContacts": 1494,
+        "touchedContacts": 128,
+        "coverageRate": 8.57,
+        "overdueRecontacts": 2424,
+        "reliable": true
       },
       {
         "rep": "Alexandra Kuschner",
+        "reviewed": 100,
+        "asIsRate": 2,
+        "editRate": 78,
+        "rejectionRate": 20,
         "overrideRate": 98,
-        "total": 100
+        "p90Hours": 105.81,
+        "p50Hours": 0.4,
+        "pending": 231,
+        "pendingOver24h": 231,
+        "activeContacts": 314,
+        "touchedContacts": 71,
+        "coverageRate": 22.61,
+        "overdueRecontacts": 1514,
+        "reliable": true
       },
       {
         "rep": "Irfan Guener",
+        "reviewed": 77,
+        "asIsRate": 24.68,
+        "editRate": 5.19,
+        "rejectionRate": 70.13,
         "overrideRate": 75.32,
-        "total": 77
+        "p90Hours": 122.05,
+        "p50Hours": 71.72,
+        "pending": 333,
+        "pendingOver24h": 333,
+        "activeContacts": 930,
+        "touchedContacts": 56,
+        "coverageRate": 6.02,
+        "overdueRecontacts": 1348,
+        "reliable": true
+      },
+      {
+        "rep": "Raban Kolster",
+        "reviewed": 71,
+        "asIsRate": 45.07,
+        "editRate": 36.62,
+        "rejectionRate": 18.31,
+        "overrideRate": 54.93,
+        "p90Hours": 251.38,
+        "p50Hours": 76.06,
+        "pending": 435,
+        "pendingOver24h": 435,
+        "activeContacts": 208,
+        "touchedContacts": 56,
+        "coverageRate": 26.92,
+        "overdueRecontacts": 722,
+        "reliable": true
+      },
+      {
+        "rep": "Chris Schemel",
+        "reviewed": 42,
+        "asIsRate": 52.38,
+        "editRate": 19.05,
+        "rejectionRate": 28.57,
+        "overrideRate": 47.62,
+        "p90Hours": 120.84,
+        "p50Hours": 19.09,
+        "pending": 289,
+        "pendingOver24h": 289,
+        "activeContacts": 660,
+        "touchedContacts": 25,
+        "coverageRate": 3.79,
+        "overdueRecontacts": 912,
+        "reliable": true
+      },
+      {
+        "rep": "Gloria Schmalisch",
+        "reviewed": 11,
+        "asIsRate": 54.55,
+        "editRate": 45.45,
+        "rejectionRate": 0,
+        "overrideRate": 45.45,
+        "p90Hours": 107.18,
+        "p50Hours": 73.64,
+        "pending": 472,
+        "pendingOver24h": 472,
+        "activeContacts": 530,
+        "touchedContacts": 84,
+        "coverageRate": 15.85,
+        "overdueRecontacts": 1038,
+        "reliable": false
       },
       {
         "rep": "Lennart Uhrig",
+        "reviewed": 7,
+        "asIsRate": 28.57,
+        "editRate": 57.14,
+        "rejectionRate": 14.29,
         "overrideRate": 71.43,
+        "p90Hours": 0.94,
+        "p50Hours": 0.07,
+        "pending": 0,
+        "pendingOver24h": 0,
+        "activeContacts": 2,
+        "touchedContacts": 0,
+        "coverageRate": 0,
+        "overdueRecontacts": 5,
+        "reliable": false
+      }
+    ],
+    "slippageByRep": [
+      {
+        "rep": "Isabella K",
+        "avgSlippageDays": -0.53,
+        "p50Days": -0.41,
+        "p90Days": 0.61
+      },
+      {
+        "rep": "Alex Quilatang",
+        "avgSlippageDays": -1.54,
+        "p50Days": -1.75,
+        "p90Days": 0.37
+      },
+      {
+        "rep": "Lianh Hahlen",
+        "avgSlippageDays": -1.74,
+        "p50Days": -1.88,
+        "p90Days": -0.67
+      },
+      {
+        "rep": "Luca Micke",
+        "avgSlippageDays": -1.78,
+        "p50Days": -1.9,
+        "p90Days": 0.02
+      },
+      {
+        "rep": "Isabella Kuschner",
+        "avgSlippageDays": -2.03,
+        "p50Days": -2.32,
+        "p90Days": -0.07
+      },
+      {
+        "rep": "Jenefer Rosarito",
+        "avgSlippageDays": -2.09,
+        "p50Days": -2.25,
+        "p90Days": -0.79
+      },
+      {
+        "rep": "Christoph Schemel",
+        "avgSlippageDays": -2.19,
+        "p50Days": -2.5,
+        "p90Days": -0.09
+      },
+      {
+        "rep": "Marian Dionisio",
+        "avgSlippageDays": -2.32,
+        "p50Days": -2.49,
+        "p90Days": -1.03
+      },
+      {
+        "rep": "Akhib Nayaz",
+        "avgSlippageDays": -2.34,
+        "p50Days": -2.31,
+        "p90Days": -1.4
+      },
+      {
+        "rep": "Caira Panoso",
+        "avgSlippageDays": -2.39,
+        "p50Days": -2.14,
+        "p90Days": -0.81
+      },
+      {
+        "rep": "Alvin Pomarin",
+        "avgSlippageDays": -2.48,
+        "p50Days": -2.39,
+        "p90Days": -1.05
+      },
+      {
+        "rep": "Alex Jr Quilantang",
+        "avgSlippageDays": -2.51,
+        "p50Days": -2.37,
+        "p90Days": -1.28
+      }
+    ]
+  },
+  "pipeline": {
+    "overdueRecontacts": 12395,
+    "overdueRecontactRate": 96.63,
+    "totalPastDue": 12827,
+    "slippageP50Days": -2.7,
+    "slippageP90Days": -0.22,
+    "stageDistribution": [
+      {
+        "stage": "sdr_pre_pitch",
+        "count": 9645,
+        "pct": 47.42,
+        "reviewed": 164,
+        "approvalRate": 45.12
+      },
+      {
+        "stage": "lead_lost",
+        "count": 5953,
+        "pct": 29.27,
+        "reviewed": 2,
+        "approvalRate": null
+      },
+      {
+        "stage": "pitch_booked",
+        "count": 1490,
+        "pct": 7.33,
+        "reviewed": 80,
+        "approvalRate": 75
+      },
+      {
+        "stage": "mof_reengagement",
+        "count": 1161,
+        "pct": 5.71,
+        "reviewed": 8,
+        "approvalRate": 87.5
+      },
+      {
+        "stage": "send_material",
+        "count": 1049,
+        "pct": 5.16,
+        "reviewed": 181,
+        "approvalRate": 56.35
+      },
+      {
+        "stage": "post_first_pitch_mof",
+        "count": 390,
+        "pct": 1.92,
+        "reviewed": 22,
+        "approvalRate": 77.27
+      },
+      {
+        "stage": "no_show_tof",
+        "count": 283,
+        "pct": 1.39,
+        "reviewed": 19,
+        "approvalRate": 68.42
+      },
+      {
+        "stage": "new_stakeholder_onboarding",
+        "count": 230,
+        "pct": 1.13,
+        "reviewed": 0,
+        "approvalRate": null
+      },
+      {
+        "stage": "mof_post_pitch",
+        "count": 92,
+        "pct": 0.45,
+        "reviewed": 5,
+        "approvalRate": 60
+      },
+      {
+        "stage": "mof_no_show",
+        "count": 46,
+        "pct": 0.23,
+        "reviewed": 1,
+        "approvalRate": null
+      }
+    ]
+  },
+  "aiQuality": {
+    "editRateByCategory": [
+      {
+        "category": "send_material",
+        "editRate": 96.08,
+        "total": 102
+      },
+      {
+        "category": "mof_post_pitch",
+        "editRate": 66.67,
+        "total": 3
+      },
+      {
+        "category": "sdr_pre_pitch",
+        "editRate": 62.16,
+        "total": 74
+      },
+      {
+        "category": "mof_reengagement",
+        "editRate": 57.14,
         "total": 7
       },
       {
-        "rep": "Raban Kolster",
-        "overrideRate": 54.93,
-        "total": 71
+        "category": "pitch_booked",
+        "editRate": 48.33,
+        "total": 60
       },
       {
-        "rep": "Chris Schemel",
-        "overrideRate": 47.62,
-        "total": 42
+        "category": "post_first_pitch_mof",
+        "editRate": 41.18,
+        "total": 17
       },
       {
-        "rep": "Gloria Schmalisch",
-        "overrideRate": 45.45,
-        "total": 11
-      }
-    ],
-    "latencyP90ByRep": [
-      {
-        "rep": "Raban Kolster",
-        "p90Hours": 251.38,
-        "p50Hours": 76.06
-      },
-      {
-        "rep": "Marvin Hug",
-        "p90Hours": 152.15,
-        "p50Hours": 32.97
-      },
-      {
-        "rep": "Irfan Guener",
-        "p90Hours": 122.05,
-        "p50Hours": 71.72
-      },
-      {
-        "rep": "Chris Schemel",
-        "p90Hours": 120.84,
-        "p50Hours": 19.09
-      },
-      {
-        "rep": "Gloria Schmalisch",
-        "p90Hours": 107.18,
-        "p50Hours": 73.64
-      },
-      {
-        "rep": "Alexandra Kuschner",
-        "p90Hours": 105.81,
-        "p50Hours": 0.4
-      },
-      {
-        "rep": "Lennart Uhrig",
-        "p90Hours": 0.94,
-        "p50Hours": 0.07
+        "category": "no_show_tof",
+        "editRate": 30.77,
+        "total": 13
       }
     ],
     "rejectionByStage": [
-      {
-        "stage": "mof_no_show",
-        "rejectionRate": 100,
-        "total": 1,
-        "rejected": 1
-      },
       {
         "stage": "sdr_pre_pitch",
         "rejectionRate": 54.88,
         "total": 164,
         "rejected": 90
-      },
-      {
-        "stage": "lead_lost",
-        "rejectionRate": 50,
-        "total": 2,
-        "rejected": 1
       },
       {
         "stage": "send_material",
@@ -160,168 +467,50 @@
         "rejected": 1
       }
     ],
-    "channelOverrideRate": 2.62,
-    "channelOverrides": 5,
-    "totalApprovedEdited": 191,
-    "slippageByRep": [
-      {
-        "rep": "Isabella K",
-        "avgSlippageDays": -0.53
-      },
-      {
-        "rep": "Alex Quilatang",
-        "avgSlippageDays": -1.54
-      },
-      {
-        "rep": "Lianh Hahlen",
-        "avgSlippageDays": -1.74
-      },
-      {
-        "rep": "Luca Micke",
-        "avgSlippageDays": -1.78
-      },
-      {
-        "rep": "Isabella Kuschner",
-        "avgSlippageDays": -2.03
-      },
-      {
-        "rep": "Jenefer Rosarito",
-        "avgSlippageDays": -2.09
-      },
-      {
-        "rep": "Christoph Schemel",
-        "avgSlippageDays": -2.19
-      },
-      {
-        "rep": "Marian Dionisio",
-        "avgSlippageDays": -2.32
-      },
-      {
-        "rep": "Akhib Nayaz",
-        "avgSlippageDays": -2.34
-      },
-      {
-        "rep": "Caira Panoso",
-        "avgSlippageDays": -2.39
-      },
-      {
-        "rep": "Alvin Pomarin",
-        "avgSlippageDays": -2.48
-      },
-      {
-        "rep": "Alex Jr Quilantang",
-        "avgSlippageDays": -2.51
-      }
-    ]
-  },
-  "operator": {
-    "editRateByCategory": [
-      {
-        "category": "lead_lost",
-        "editRate": 100,
-        "total": 2
-      },
-      {
-        "category": "send_material",
-        "editRate": 98,
-        "total": 200
-      },
-      {
-        "category": "mof_post_pitch",
-        "editRate": 80,
-        "total": 5
-      },
-      {
-        "category": "sdr_pre_pitch",
-        "editRate": 76.67,
-        "total": 120
-      },
-      {
-        "category": "mof_reengagement",
-        "editRate": 72.73,
-        "total": 11
-      },
-      {
-        "category": "pitch_booked",
-        "editRate": 65.17,
-        "total": 89
-      },
-      {
-        "category": "post_first_pitch_mof",
-        "editRate": 58.33,
-        "total": 24
-      },
-      {
-        "category": "no_show_tof",
-        "editRate": 47.06,
-        "total": 17
-      }
-    ],
-    "backlogCount": 19857,
-    "backlogAvgAgeHours": 457.92,
-    "avgFollowupRejected": 0.98,
-    "avgFollowupApproved": 1.17,
-    "followupDepthDistribution": [
+    "followupRejectionByDepth": [
       {
         "followup": "F0",
-        "count": 48
+        "reviewed": 129,
+        "rejected": 48,
+        "rejectionRate": 37.21
       },
       {
         "followup": "F1",
-        "count": 143
+        "reviewed": 308,
+        "rejected": 143,
+        "rejectionRate": 46.43
       },
       {
         "followup": "F2",
-        "count": 2
+        "reviewed": 10,
+        "rejected": 2,
+        "rejectionRate": 20
       },
       {
         "followup": "F3",
-        "count": 6
+        "reviewed": 14,
+        "rejected": 6,
+        "rejectionRate": 42.86
       },
       {
         "followup": "F4",
-        "count": 2
+        "reviewed": 8,
+        "rejected": 2,
+        "rejectionRate": 25
       },
       {
         "followup": "F5",
-        "count": 1
+        "reviewed": 3,
+        "rejected": 1,
+        "rejectionRate": 33.33
       },
       {
         "followup": "F7",
-        "count": 2
-      },
-      {
-        "followup": "F8",
-        "count": 1
+        "reviewed": 3,
+        "rejected": 2,
+        "rejectionRate": 66.67
       }
     ],
-    "flagImpact": [
-      {
-        "flag": "EMAIL_BOUNCED",
-        "flaggedRejectionRate": 33.33,
-        "baselineRejectionRate": 42.53,
-        "flaggedCount": 3
-      },
-      {
-        "flag": "OOO_REPLY",
-        "flaggedRejectionRate": 0,
-        "baselineRejectionRate": 42.53,
-        "flaggedCount": 3
-      },
-      {
-        "flag": "MULTIPLE_DEALS",
-        "flaggedRejectionRate": 33.33,
-        "baselineRejectionRate": 42.53,
-        "flaggedCount": 3
-      },
-      {
-        "flag": "LAST_EMAIL_VIA_SEQUENCE",
-        "flaggedRejectionRate": 28.26,
-        "baselineRejectionRate": 42.53,
-        "flaggedCount": 46
-      }
-    ],
-    "baselineRejRate": 42.53,
     "triggerDistribution": [
       {
         "trigger": "call_logged",
@@ -353,6 +542,86 @@
         "count": 115,
         "pct": 0.57
       }
-    ]
+    ],
+    "rejectionReasons": [
+      {
+        "reason": "marv was too late",
+        "count": 43
+      },
+      {
+        "reason": "Schon manuell erledigt",
+        "count": 20
+      },
+      {
+        "reason": "bereits von dir versendet",
+        "count": 18
+      },
+      {
+        "reason": "Falscher Channel",
+        "count": 5
+      },
+      {
+        "reason": "Datum/Termin falsch",
+        "count": 3
+      },
+      {
+        "reason": "not interested",
+        "count": 3
+      },
+      {
+        "reason": "wurde am 11.05 durch digest versendet (ohne meine bestätigung)",
+        "count": 3
+      },
+      {
+        "reason": "auch hier, hab nie mit dem telefoniert gehabt",
+        "count": 1
+      },
+      {
+        "reason": "hier sollte \"gestern\" stehen",
+        "count": 1
+      },
+      {
+        "reason": "almost customer (TS send)",
+        "count": 1
+      },
+      {
+        "reason": "Falsche info",
+        "count": 1
+      },
+      {
+        "reason": "\"morgen\", passt nicht zum datum. Der Termin ist ja heute",
+        "count": 1
+      }
+    ],
+    "noReasonCount": 62,
+    "timingRejections": 82,
+    "timingRejectionRate": 40,
+    "flagImpact": [
+      {
+        "flag": "EMAIL_BOUNCED",
+        "flaggedRejectionRate": 33.33,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "OOO_REPLY",
+        "flaggedRejectionRate": 0,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "MULTIPLE_DEALS",
+        "flaggedRejectionRate": 33.33,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 3
+      },
+      {
+        "flag": "LAST_EMAIL_VIA_SEQUENCE",
+        "flaggedRejectionRate": 28.26,
+        "baselineRejectionRate": 42.53,
+        "flaggedCount": 46
+      }
+    ],
+    "baselineRejRate": 42.53
   }
 }
